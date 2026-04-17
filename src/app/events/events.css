@@ -1,0 +1,181 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f4f6f8;
+}
+
+.container {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 10px;
+}
+
+.section-title {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+/* CARD */
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* FORM */
+.form-row {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 10px;
+}
+
+input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+/* BUTTONY FORM */
+.form-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.form-buttons button {
+  border: none;
+  padding: 10px 16px;
+  border-radius: 999px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #1976d2, #42a5f5);
+  color: white;
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+}
+
+.btn-secondary {
+  background: #e0e0e0;
+  color: #333;
+}
+
+.btn-secondary:hover {
+  background: #cfcfcf;
+}
+
+/* LISTA (zamiast grida) */
+.events-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* EVENT CARD */
+.event-card {
+  border-left: 4px solid #1976d2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.2s;
+}
+
+.event-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* LEWA */
+.event-content {
+  display: flex;
+  flex-direction: column;
+}
+
+/* PRAWA */
+.event-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* DATA */
+.event-date {
+  font-size: 12px;
+  background: #e3f2fd;
+  color: #1976d2;
+  padding: 5px 8px;
+  border-radius: 6px;
+}
+
+/* JOIN / LEAVE */
+.join-btn {
+  background: #d1e7dd;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.join-btn:hover {
+  background: #badbcc;
+}
+
+.leave-btn {
+  background: #f8d7da;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.leave-btn:hover {
+  background: #f1b0b7;
+}
+
+/* EDIT / DELETE */
+.edit-btn {
+  background: #fff3cd;
+  border: none;
+  padding: 5px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.delete-btn {
+  background: #f8d7da;
+  border: none;
+  padding: 5px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.join-btn {
+  background: #d1e7dd;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.join-btn:hover {
+  background: #badbcc;
+}
+
+.leave-btn {
+  background: #f8d7da;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.leave-btn:hover {
+  background: #f1b0b7;
+}
