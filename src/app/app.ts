@@ -1,12 +1,10 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
+import { EventsComponent } from './events/events';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.html',
-  styleUrl: './app.css'
+  standalone: true,
+  imports: [EventsComponent],
+  template: `<app-events></app-events>`
 })
-export class App {
-  protected readonly title = signal('cityskate-frontend');
-}
+export class App {}

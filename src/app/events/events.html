@@ -1,0 +1,99 @@
+<div class="container">
+
+  <h1>CitySkate Events</h1>
+
+  <div class="card form-card">
+    <h3>
+      {{ editingId ? 'Edit Event' : 'Add Event' }}
+    </h3>
+
+    <form (submit)="addEvent($event)">
+      <div class="form-row">
+        <input
+          placeholder="Name"
+          [(ngModel)]="newEvent.name"
+          name="name"
+        >
+
+        <input
+          placeholder="Location"
+          [(ngModel)]="newEvent.locationName"
+          name="location"
+        >
+      </div>
+
+      <div class="form-row">
+        <input
+          type="datetime-local"
+          [(ngModel)]="newEvent.startDateTime"
+          name="start"
+        >
+
+        <input
+          type="datetime-local"
+          [(ngModel)]="newEvent.endDateTime"
+          name="end"
+        >
+      </div>
+
+      <div class="form-buttons">
+        <button type="submit" class="btn-primary">
+          {{ editingId ? 'Update Event' : 'Add Event' }}
+        </button>
+
+        <button
+          type="button"
+          class="btn-secondary"
+          (click)="resetForm()"
+          *ngIf="editingId"
+        >
+          Cancel
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <h2 class="section-title">Events List</h2>
+
+  <div class="events-list">
+    <div class="card event-card" *ngFor="let e of events">
+
+      <!-- LEWA -->
+      <div class="event-content">
+        <div class="event-title">{{ e.name }}</div>
+        <div class="event-location">{{ e.locationName }}</div>
+      </div>
+
+      <!-- PRAWA -->
+      <div class="event-actions">
+
+        <div class="event-date" *ngIf="e.startDateTime">
+          {{ formatDisplayDate(e.startDateTime) }}
+        </div>
+
+        <!-- 🔥 JOIN / LEAVE (warunkowe) -->
+        <button
+          class="join-btn"
+          *ngIf="!joinedEvents.has(e.id)"
+          (click)="joinEvent(e.id)"
+        >
+          Join
+        </button>
+
+        <button
+          class="leave-btn"
+          *ngIf="joinedEvents.has(e.id)"
+          (click)="leaveEvent(e.id)"
+        >
+          Leave
+        </button>
+
+        <button class="edit-btn" (click)="editEvent(e)">✏️</button>
+        <button class="delete-btn" (click)="deleteEvent(e.id)">✖</button>
+
+      </div>
+
+    </div>
+  </div>
+
+</div>
