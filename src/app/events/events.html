@@ -56,22 +56,52 @@
   <h2 class="section-title">Events List</h2>
 
   <div class="events-list">
-    <div class="card event-card" *ngFor="let e of events">
+
+    <!-- RDFa CHANGE #1 -->
+    <!-- Added typeof + vocab -->
+    <div
+      class="card event-card"
+      *ngFor="let e of events"
+      typeof="Event"
+      vocab="https://schema.org/"
+    >
 
       <!-- LEWA -->
       <div class="event-content">
-        <div class="event-title">{{ e.name }}</div>
-        <div class="event-location">{{ e.locationName }}</div>
+
+        <!-- RDFa CHANGE #2 -->
+        <!-- Added property="name" -->
+        <div
+          class="event-title"
+          property="name"
+        >
+          {{ e.name }}
+        </div>
+
+        <!-- RDFa CHANGE #3 -->
+        <!-- Added property="location" -->
+        <div
+          class="event-location"
+          property="location"
+        >
+          {{ e.locationName }}
+        </div>
+
       </div>
 
       <!-- PRAWA -->
       <div class="event-actions">
 
-        <div class="event-date" *ngIf="e.startDateTime">
+        <!-- RDFa CHANGE #4 -->
+        <!-- Added property="startDate" -->
+        <div
+          class="event-date"
+          *ngIf="e.startDateTime"
+          property="startDate"
+        >
           {{ formatDisplayDate(e.startDateTime) }}
         </div>
 
-        <!-- 🔥 JOIN / LEAVE (warunkowe) -->
         <button
           class="join-btn"
           *ngIf="!joinedEvents.has(e.id)"
@@ -97,3 +127,16 @@
   </div>
 
 </div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": "CitySkate Event",
+  "startDate": "2026-06-01T20:00",
+  "location": {
+    "@type": "Place",
+    "name": "Wroclaw"
+  }
+}
+</script>
